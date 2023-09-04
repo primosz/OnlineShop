@@ -4,14 +4,148 @@
     "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj": {
+    "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\OnlineShop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj",
-        "projectName": "OnlineShop.UI",
-        "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj",
+        "projectUniqueName": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\OnlineShop.Application.csproj",
+        "projectName": "OnlineShop.Application",
+        "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\OnlineShop.Application.csproj",
         "packagesPath": "C:\\Users\\pmaj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\obj\\",
+        "outputPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pmaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\OnlineShop.Database.csproj": {
+                "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\OnlineShop.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\OnlineShop.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\OnlineShop.Database.csproj",
+        "projectName": "OnlineShop.Database",
+        "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\OnlineShop.Database.csproj",
+        "packagesPath": "C:\\Users\\pmaj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pmaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\OnlineShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\OnlineShop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\OnlineShop.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\OnlineShop.Domain.csproj",
+        "projectName": "OnlineShop.Domain",
+        "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\OnlineShop.Domain.csproj",
+        "packagesPath": "C:\\Users\\pmaj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +173,76 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj",
+        "projectName": "OnlineShop.UI",
+        "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\OnlineShop.UI.csproj",
+        "packagesPath": "C:\\Users\\pmaj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pmaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\OnlineShop.Application.csproj": {
+                "projectPath": "C:\\Users\\pmaj\\source\\repos\\OnlineShop\\OnlineShop\\OnlineShop.Application\\OnlineShop.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Certificate": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

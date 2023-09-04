@@ -1,0 +1,17 @@
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Application.deps.json
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Application.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Application.pdb
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.csproj.AssemblyReference.cache
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.AssemblyInfoInputs.cache
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.AssemblyInfo.cs
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.csproj.CoreCompileInputs.cache
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\refint\OnlineShop.Application.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.pdb
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\ref\OnlineShop.Application.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Database.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Domain.dll
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Database.pdb
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\bin\Debug\net6.0\OnlineShop.Domain.pdb
+C:\Users\pmaj\source\repos\OnlineShop\OnlineShop\OnlineShop.Application\obj\Debug\net6.0\OnlineShop.Application.csproj.CopyComplete

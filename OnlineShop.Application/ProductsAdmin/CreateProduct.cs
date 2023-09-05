@@ -3,32 +3,49 @@ using OnlineShop.Domain.Models;
 
 namespace OnlineShop.Application.ProductsAdmin
 {
-    public class CreateProduct
-    {
-        private ApplicationDbContext _context;
+	public class CreateProduct
+	{
+		private ApplicationDbContext _context;
 
-        public CreateProduct(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+		public CreateProduct(ApplicationDbContext context)
+		{
+			_context = context;
+		}
 
-        public async Task Do(ProductViewModel viewModel)
-        {
-            _context.Products.Add(new Product
-            {
-                Name = viewModel.Name,
-                Description = viewModel.Description,
-                Value = viewModel.Value
-            });
+		public async Task<Response> Do(Request request)
+		{
+			var product = new Product
+			{
+				Name = request.Name,
+				Description = request.Description,
+				Value = request.Value
+			};
 
-            await _context.SaveChangesAsync();
-        }
+			_context.Products.Add(product);
 
-        public class ProductViewModel
-        {
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public decimal Value { get; set; }
-        }
-    }
+			await _context.SaveChangesAsync();
+			return new Response
+			{
+				Id = product.Id,
+				Name = product.Name,
+				Description = product.Description,
+				Value = product.Value
+			};
+		}
+
+		public class Request
+		{
+			public string Name { get; set; }
+			public string Description { get; set; }
+			public decimal Value { get; set; }
+		}
+
+		public class Response
+		{
+			public int Id { get; set; }
+			public string Name { get; set; }
+			public string Description { get; set; }
+			public decimal Value { get; set; }
+		}
+	}
 }

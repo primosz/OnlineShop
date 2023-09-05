@@ -1,27 +1,35 @@
 ﻿using OnlineShop.Database;
-using OnlineShop.Domain.Models;
 
 namespace OnlineShop.Application.ProductsAdmin
 {
-    public class UpdateProduct
-    {
-        private ApplicationDbContext _context;
+	public class UpdateProduct
+	{
+		private ApplicationDbContext _context;
 
-        public UpdateProduct(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+		public UpdateProduct(ApplicationDbContext context)
+		{
+			_context = context;
+		}
 
-        public async Task Do(ProductViewModel viewModel)
-        {
-            await _context.SaveChangesAsync();
-        }
+		public async Task<Response> Do(Request request)
+		{
+			await _context.SaveChangesAsync();
+			return new Response();
+		}
 
-        public class ProductViewModel
-        {
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public decimal Value { get; set; }
-        }
-    }
+		public class Request
+		{
+			public string Name { get; set; }
+			public string Description { get; set; }
+			public decimal Value { get; set; }
+		}
+
+		public class Response
+		{
+			public int Id { get; set; }
+			public string Name { get; set; }
+			public string Description { get; set; }
+			public decimal Value { get; set; }
+		}
+	}
 }

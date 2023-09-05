@@ -4,11 +4,17 @@
 }
 
 <div id="app">
-	<input type="number" v-model/>
+	<input type="number" v-model="price"/>
+	<p>
+		{{price}}
+	</p>
+	<p>
+		{{formatPrice}}
+	</p>
 </div>
 
 
 @section scripts{
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src = "!/js/admin/main.js"></script>
+	<script type="module" src = "~/js/admin/main.js"></script>
 }

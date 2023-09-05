@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\js\admin\main.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,10 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.Application\OnlineShop.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\admin\" />
   </ItemGroup>
 
 </Project>

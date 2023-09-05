@@ -1,7 +1,7 @@
 ﻿using OnlineShop.Database;
 using OnlineShop.Domain.Models;
 
-namespace OnlineShop.Application.CreateProducts
+namespace OnlineShop.Application.ProductsAdmin
 {
     public class CreateProduct
     {
@@ -23,12 +23,12 @@ namespace OnlineShop.Application.CreateProducts
 
             await _context.SaveChangesAsync();
         }
-    }
 
-    public class ProductViewModel
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Value { get; set; }
+        public class ProductViewModel
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public decimal Value { get; set; }
+        }
     }
 }

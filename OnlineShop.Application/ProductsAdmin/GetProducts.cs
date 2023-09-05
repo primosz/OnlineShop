@@ -1,17 +1,17 @@
 ﻿using OnlineShop.Database;
 
-namespace OnlineShop.Application.Products
+namespace OnlineShop.Application.ProductsAdmin
 {
     public class GetProducts
     {
-        private ApplicationDbContext _ctx;
-        public GetProducts(ApplicationDbContext ctx)
+        private ApplicationDbContext _context;
+        public GetProducts(ApplicationDbContext context)
         {
-            _ctx = ctx;
+            _context = context;
         }
 
         public IEnumerable<ProductViewModel> Do() =>
-            _ctx.Products.Select(x => new ProductViewModel
+            _context.Products.Select(x => new ProductViewModel
             {
                 Id = x.Id,
                 Name = x.Name,

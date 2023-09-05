@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.UI", "OnlineShop.UI\OnlineShop.UI.csproj", "{483B7B1F-5401-4561-BFB5-E30E765EC346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.UI", "OnlineShop.UI\OnlineShop.UI.csproj", "{483B7B1F-5401-4561-BFB5-E30E765EC346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Domain", "OnlineShop.Domain\OnlineShop.Domain.csproj", "{0061A835-C121-4237-B532-AF9241CE6BE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Domain", "OnlineShop.Domain\OnlineShop.Domain.csproj", "{0061A835-C121-4237-B532-AF9241CE6BE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Application", "OnlineShop.Application\OnlineShop.Application.csproj", "{49414BA5-7254-4AFF-A34D-BEAA883CD6BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Application", "OnlineShop.Application\OnlineShop.Application.csproj", "{49414BA5-7254-4AFF-A34D-BEAA883CD6BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Database", "OnlineShop.Database\OnlineShop.Database.csproj", "{4A33EDC0-132C-4EC8-876F-9363BFA487C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Database", "OnlineShop.Database\OnlineShop.Database.csproj", "{4A33EDC0-132C-4EC8-876F-9363BFA487C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5BB6DE48-E95F-45F4-8B68-0C21CD5549FF}"
 	ProjectSection(SolutionItems) = preProject

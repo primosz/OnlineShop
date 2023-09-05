@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineShop.Application.Products;
+using OnlineShop.Application.CreateProducts;
+using OnlineShop.Application.GetProducts;
 using OnlineShop.Database;
 
 namespace OnlineShop.UI.Pages
@@ -16,23 +17,18 @@ namespace OnlineShop.UI.Pages
         }
 
         [BindProperty]
-        public ProductViewModel Product { get; set; }
+        public Application.CreateProducts.ProductViewModel Product { get; set; }
+        public IEnumerable<Application.GetProducts.ProductViewModel> Products { get; set; }
 
-        public class ProductViewModel
-        {
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public decimal Value { get; set; }
-        }
 
         public void OnGet()
         {
-
+            Products = new GetProducts(_ctx).Do();
         }
 
         public async Task<IActionResult> OnPost()
         {
-            await new CreateProduct(_ctx).Do(Product.Name, Product.Description, Product.Value);
+            await new CreateProduct(_ctx).Do(Product);
             return RedirectToPage("Index");
         }
     }

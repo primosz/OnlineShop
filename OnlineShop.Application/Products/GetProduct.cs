@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnlineShop.Database;
 
 namespace OnlineShop.Application.Products
 {
-    internal class GetProduct
+    public class GetProduct
     {
+        private ApplicationDbContext _ctx;
+        public GetProduct(ApplicationDbContext ctx)
+        {
+            _ctx = ctx;
+        }
+
+        public void Do()
+        {
+
+        }
+    }
+
+    public class ProductViewModel
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Value { get; set; }
     }
 }

@@ -1,69 +1,6 @@
-﻿// Import the necessary Vue 3 Composition API functions
-const { ref, watchEffect, createApp } = Vue;
-//import axios from 'axios';
+﻿const { createApp, ref } = Vue
 
-// Define the component's template as a string
-const template = `
-  <div>
-    <div v-if="!editing">
-      <button class="button" @click="newProduct">Add new Product</button>
-      <table class="table">
-        <tr>
-          <th>Id</th>
-          <th>Product</th>
-          <th>Value</th>
-          <th></th>
-          <th></th>
-        </tr>
-        <tr v-for="(product, index) in products" :key="product.id">
-          <td>{{ product.id }}</td>
-          <td>{{ product.name }}</td>
-          <td>{{ product.value }}</td>
-          <td>
-            <button class="button is-info" @click="editProduct(product.id, index)">Edit</button>
-          </td>
-          <td>
-            <button class="button is-error" @click="deleteProduct(product.id, index)">Remove</button>
-          </td>
-          <td></td>
-        </tr>
-      </table>
-    </div>
-    <div v-else>
-      <div class="field">
-        <label class="label">Product Name</label>
-        <div class="control">
-          <input class="input" v-model="productModel.name" />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Product Description</label>
-
-        <div class="control">
-          <input class="input" v-model="productModel.description" />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Product Value</label>
-
-        <div class="control">
-          <input class="input" v-model="productModel.value" />
-        </div>
-      </div>
-      <div class="buttons">
-        <button class="button is-success" @click="createProduct" v-if="!productModel.id">Create Product</button>
-        <button class="button is-warning" @click="updateProduct" v-else>Update Product</button>
-        <button class="button" @click="cancel">Cancel</button>
-      </div>
-    </div>
-  </div>
-`;
-
-// Define the component's logic
-const ProductManager = {
-    template,
+createApp({
     setup() {
         const editing = ref(false);
         const message = ref('Admin Panel');
@@ -77,7 +14,6 @@ const ProductManager = {
         });
         const products = ref([]);
 
-        // Define the component's methods
         function getProduct(id) {
             loading.value = true;
             axios
@@ -181,7 +117,6 @@ const ProductManager = {
             editing.value = false;
         }
 
-        // Return the properties and methods to be used in the template
         return {
             message,
             editing,
@@ -203,6 +138,5 @@ const ProductManager = {
         console.log('Mounted');
         this.getProducts();
     },
-};
-
-export default ProductManager;
+})
+    .mount('#app');

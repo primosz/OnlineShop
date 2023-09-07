@@ -13,7 +13,7 @@ namespace OnlineShop.Application.ProductsAdmin
 
 		public async Task<bool> Do(int id)
 		{
-			var product = _context.Products.FirstOrDefault(x => x.Id == id);
+			var product = _context.Products.FirstOrDefault(p => p.Id == id);
 			_context.Products.Remove(product);
 			await _context.SaveChangesAsync();
 			return true;

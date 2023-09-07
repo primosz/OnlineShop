@@ -135,7 +135,7 @@ createApp({
         };
     },
     mounted() {
-        console.log('Mounted');
+        console.log('Mounted products');
         this.getProducts();
     },
 })

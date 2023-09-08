@@ -5,23 +5,23 @@ using OnlineShop.Database;
 
 namespace OnlineShop.UI.Pages
 {
-    public class IndexModel : PageModel
-    {
-        private ApplicationDbContext _ctx;
+	public class IndexModel : PageModel
+	{
+		private ApplicationDbContext _context;
 
 
-        public IndexModel(ApplicationDbContext ctx)
-        {
-            _ctx = ctx;
-        }
+		public IndexModel(ApplicationDbContext context)
+		{
+			_context = context;
+		}
 
-        [BindProperty]
-        public IEnumerable<GetProducts.ProductViewModel> Products { get; set; }
+		[BindProperty]
+		public IEnumerable<GetProducts.ProductViewModel> Products { get; set; }
 
 
-        public void OnGet()
-        {
-            Products = new GetProducts(_ctx).Do();
-        }
-    }
+		public void OnGet()
+		{
+			Products = new GetProducts(_context).Do();
+		}
+	}
 }

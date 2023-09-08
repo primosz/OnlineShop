@@ -10,6 +10,11 @@ builder.Services.AddRazorPages();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
+builder.Services.AddSession(options =>
+{
+	options.Cookie.Name = "Cart";
+	options.Cookie.MaxAge = TimeSpan.FromDays(365);
+});
 
 var app = builder.Build();
 
@@ -27,9 +32,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
+app.UseSession();
 app.UseEndpoints(endpoints => { endpoints.MapControllerRoute(name: "default", pattern: "{controller=Admin}/{action=Index}/{id?}"); });
+app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
 
 app.MapRazorPages();
+app.UseCookiePolicy();
 
 app.Run();
 

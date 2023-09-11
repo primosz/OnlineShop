@@ -20,7 +20,7 @@ namespace OnlineShop.Application.Products
 				Id = p.Id,
 				Name = p.Name,
 				Description = p.Description,
-				Value = $"$ {p.Value:N2}",
+				Value = $"€ {p.Value:N2}",
 				Stock = p.Stock.Select(s => new StockViewModel
 				{
 					Id = s.Id,

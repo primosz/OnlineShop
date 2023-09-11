@@ -2,6 +2,7 @@ using Braintree;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnlineShop.Application.Cart;
+using OnlineShop.Database;
 using OnlineShop.UI.Services;
 
 namespace OnlineShop.UI.Pages.Checkout
@@ -12,9 +13,11 @@ namespace OnlineShop.UI.Pages.Checkout
 		public string ClientToken;
 		[BindProperty]
 		public GetCart.Response Cart { get; set; }
-		public PaymentModel(IBraintreeService braintreeService)
+		private ApplicationDbContext _context;
+		public PaymentModel(IBraintreeService braintreeService, ApplicationDbContext context)
 		{
 			_braintreeService = braintreeService;
+			_context = context;
 		}
 
 
@@ -48,11 +51,14 @@ namespace OnlineShop.UI.Pages.Checkout
 		//param to be changed, for debug
 		public IActionResult OnPost()
 		{
+			var cartOrder = new GetOrder(HttpContext.Session, _context).Do();
+
+
 			var gateway = _braintreeService.GetGateway();
 			var cart = Cart;
 			var request = new TransactionRequest
 			{
-				Amount = Convert.ToDecimal(Cart.Quantity),
+				Amount = cartOrder.GetTotalValue(),
 				PaymentMethodNonce = Cart.Nonce,
 				Options = new TransactionOptionsRequest
 				{
@@ -62,6 +68,7 @@ namespace OnlineShop.UI.Pages.Checkout
 
 
 			Result<Transaction> result = gateway.Transaction.Sale(request);
+			var paymentRef = result.Target.Id;
 
 			if (result.IsSuccess())
 			{

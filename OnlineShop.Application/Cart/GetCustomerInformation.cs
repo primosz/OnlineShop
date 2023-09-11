@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using OnlineShop.Domain.Models;
 
 namespace OnlineShop.Application.Cart
 {
@@ -11,7 +12,7 @@ namespace OnlineShop.Application.Cart
 			_session = session;
 		}
 
-		public class Request
+		public class Response
 		{
 			public string FirstName { get; set; }
 			public string LastName { get; set; }
@@ -23,7 +24,7 @@ namespace OnlineShop.Application.Cart
 			public string PostCode { get; set; }
 		}
 
-		public Request Do()
+		public Response Do()
 		{
 			var stringObject = _session.GetString("customer-info");
 
@@ -32,9 +33,19 @@ namespace OnlineShop.Application.Cart
 				return null;
 			}
 
-			var response = JsonConvert.DeserializeObject<Request>(stringObject);
+			var customerInformation = JsonConvert.DeserializeObject<CustomerInformation>(stringObject);
 
-			return response;
+			return new Response
+			{
+				FirstName = customerInformation.FirstName,
+				LastName = customerInformation.LastName,
+				Email = customerInformation.Email,
+				PhoneNumber = customerInformation.PhoneNumber,
+				Adress1 = customerInformation.Adress1,
+				Adress2 = customerInformation.Adress2,
+				City = customerInformation.City,
+				PostCode = customerInformation.PostCode
+			};
 		}
 	}
 }

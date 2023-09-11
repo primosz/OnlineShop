@@ -22,25 +22,31 @@ namespace OnlineShop.Application.Cart
 			public string Value { get; set; }
 			public int StockId { get; set; }
 			public int Quantity { get; set; }
+			public string Nonce { get; set; }
 		}
 
-		public Response Do()
+		public IEnumerable<Response> Do()
 		{
-			//TODO: append to the cart, multiple items
 			var stringObject = _session.GetString("cart");
-			var cartProduct = JsonConvert.DeserializeObject<CartProduct>(stringObject);
+			if (string.IsNullOrEmpty(stringObject))
+			{
+				return new List<Response>();
+			}
+
+			var cartList = JsonConvert.DeserializeObject<List<CartProduct>>(stringObject);
 
 			var response = _context.Stock
 				.Include(s => s.Product)
-				.Where(s => s.Id == cartProduct.StockId)
+				.AsEnumerable()
+				.Where(s => cartList.Any(x => x.StockId == s.Id))
 				.Select(s => new Response
 				{
 					Name = s.Product.Name,
 					Value = $"$ {s.Product.Value:N2}",
 					StockId = s.Id,
-					Quantity = cartProduct.Quantity
+					Quantity = cartList.FirstOrDefault(x => x.StockId == s.Id).Quantity
 				})
-				.FirstOrDefault();
+				.ToList();
 
 			return response;
 		}

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Database;
+using OnlineShop.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +11,13 @@ builder.Services.AddRazorPages();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
+builder.Services.AddTransient<IBraintreeService, BraintreeService>();
 builder.Services.AddSession(options =>
 {
 	options.Cookie.Name = "Cart";
 	options.Cookie.MaxAge = TimeSpan.FromDays(365);
 });
+
 
 var app = builder.Build();
 

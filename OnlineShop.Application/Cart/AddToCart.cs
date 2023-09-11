@@ -28,14 +28,20 @@ namespace OnlineShop.Application.Cart
 				cartList = JsonConvert.DeserializeObject<List<CartProduct>>(stringObject);
 			}
 
-			var cartProduct = new CartProduct
+			if (cartList.Any(x => x.StockId == request.StockId))
 			{
-				StockId = request.StockId,
-				Quantity = request.Quantity
-			};
+				cartList.Find(x => x.StockId == request.StockId).Quantity += request.Quantity;
+			}
+			else
+			{
+				cartList.Add(new CartProduct
+				{
+					StockId = request.StockId,
+					Quantity = request.Quantity
+				});
+			}
 
-			//var stringObject = JsonConvert.SerializeObject(cartProduct);
-			//TODO: append to the cart
+			stringObject = JsonConvert.SerializeObject(cartList);
 
 			_session.SetString("cart", stringObject);
 		}

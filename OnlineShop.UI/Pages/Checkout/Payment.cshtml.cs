@@ -10,12 +10,13 @@ namespace OnlineShop.UI.Pages.Checkout
 	{
 		private readonly IBraintreeService _braintreeService;
 		public string ClientToken;
-		public GetCart.Response Cart;
-
+		[BindProperty]
+		public GetCart.Response Cart { get; set; }
 		public PaymentModel(IBraintreeService braintreeService)
 		{
 			_braintreeService = braintreeService;
 		}
+
 
 		public IActionResult OnGet()
 		{
@@ -45,18 +46,20 @@ namespace OnlineShop.UI.Pages.Checkout
 		}
 
 		//param to be changed, for debug
-		public IActionResult OnPost(GetCart.Response response)
+		public IActionResult OnPost()
 		{
 			var gateway = _braintreeService.GetGateway();
+			var cart = Cart;
 			var request = new TransactionRequest
 			{
-				Amount = Convert.ToDecimal("1"),
-				PaymentMethodNonce = response.Nonce,
+				Amount = Convert.ToDecimal(Cart.Quantity),
+				PaymentMethodNonce = Cart.Nonce,
 				Options = new TransactionOptionsRequest
 				{
 					SubmitForSettlement = true
 				}
 			};
+
 
 			Result<Transaction> result = gateway.Transaction.Sale(request);
 

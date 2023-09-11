@@ -9,12 +9,14 @@
 
 <div class="wrapper">
     <div class="checkout container">
-        <form id="payment-form" method="post"> @*asp-controller="Home" asp-action="Create">*@
+        <form id="payment-form" method="post" action=""> @*asp-controller="Home" asp-action="Create">*@
             @Html.HiddenFor(n => n.Cart.StockId)
+            @Html.HiddenFor(n => n.Cart.Name)
+            @Html.HiddenFor(n => n.Cart.Quantity)
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title" name="Title" asp-for="@Model.Cart.Name">@Model.Cart.Name</h5>
-                    <p class="card-text"><small class="text-muted">Price: @Model.Cart.Quantity</small></p>
+                    <h5 class="card-title" name="Title" asp-for="Cart.Name">@Model.Cart.Name</h5>
+                    <p class="card-text"><small class="text-muted" asp-for="Cart.Quantity">Price: @Model.Cart.Quantity</small></p>
                 </div>
                 
             </div>
@@ -25,7 +27,7 @@
             </section>
             @Html.HiddenFor(n => n.Cart.Nonce, new { @id = "nonce" })
             <hr />
-            <button class="btn btn-success" type="submit"><span>Confirm payment - $@Model.Cart.Quantity</span></button>
+            <button class="btn btn-success" type="submit"><span>Confirm payment - $Cart.Quantity</span></button>
         </form>
     </div>
 </div>
@@ -34,8 +36,6 @@
 <script>
     var client_token = "@Model.ClientToken";
     var form = document.querySelector('#payment-form');
-    console.log('TOKEN: ')
-    console.log(client_token)
 
     braintree.dropin.create({
         authorization: client_token,
@@ -48,8 +48,9 @@
                 if (err) {
                     return;
                 }
+                console.log(payload)
               
-                document.querySelector('#nonce').value = payload.nonce;
+                document.querySelector('#nonce').value = 'fake-valid-no-billing-address-nonce';
                 form.submit();
             });
         });
